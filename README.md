@@ -9,15 +9,18 @@ ELSA, The Robot Playing Flute
 ## Программы ##
 
 ### Тестирование нот ###
-Arduino: fingers_test.ino
+Arduino: fingers_test.ino  
+
 Python: ard_test.py
 
 ### Проигрывание midi-файла ###
-Arduino: new_protocol.ino
+Arduino: new_protocol.ino  
+
 Python: play_midi.py
 
 ### Импровизация ###
-Arduino: main.ino
+Arduino: main.ino  
+
 Python: main.py
 
 ## TODO ##
