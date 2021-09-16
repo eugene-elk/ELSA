@@ -24,6 +24,7 @@ Arduino: main.ino
 Python: main.py
 
 flex
+flex2
 
 ## TODO ##
 * Единый файл с настройками нот и пальцев
