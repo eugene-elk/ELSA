@@ -71,17 +71,27 @@ short fingerings[22][11] = {
 // Положение серв пальцев при открытии и закрытии ноты
 short positions[11][3] = {
 // open, closed
-    {0, 0},         //head
-    {5, 20, 40},    //1
-    {25, 50},       //2
-    {60, 20},       //3
-    {20, 55},       //4
-    {70, 20},       //5
-    {60, 20},       //6
-    {35, 85},       //7
-    {68, 20},       //8
-    {70, 5},       //9
-    {50, 10}};      //10
+    {0, 0},     //head
+
+    {5, 20, 40},   //1
+
+    {25, 50},   //2
+
+    {60, 20},   //3
+
+    {20, 55},   //4
+
+    {70, 20},   //5
+
+    {60, 20},   //6
+
+    {40, 65},   //7
+
+    {70, 20},   //8
+
+    {30, 10},   //9
+
+    {22, 5}};  //10
 
 // Соответствие виртуальных и физических номеров серв
 // Виртуальный - номер в массиве
@@ -191,7 +201,6 @@ void loop()
             // Задержка
             delay(sequence[i][2]);
 
-            /*
             // Обновляем предыдущую и текущую ноту
             previous_note = current_note;
             current_note = sequence[i][0];
@@ -199,32 +208,35 @@ void loop()
             // Переход в D#
             if (current_note == 3) {
                 pick_note(14);
-                delay(200);
+                delay(20);
                 pick_note(15);
-                delay(200); 
+                delay(20); 
             }
             // Переход в С#
             if (current_note == 1) {
                 pick_note(16);
-                delay(200);
+                delay(20);
                 pick_note(17);
-                delay(200);
+                delay(20); 
+                // pwm.setPWM(servos[10], 0, positions[10][0]);
+                // delay(1000);
+                // pwm.setPWM(servos[10], 0, positions[10][0]);
+                // delay(200);
             }
             // Переход из D#
             if (previous_note == 3) {
                 pick_note(18);
-                delay(200);
+                delay(20);
                 pick_note(19);
-                delay(200); 
+                delay(20); 
             }
             // Переход из С#
             if (previous_note == 1) {
                 pick_note(20);
-                delay(200);
+                delay(20);
                 pick_note(21);
-                delay(200); 
+                delay(20); 
             }
-            */
 
             // Взятие ноты
             pick_note(sequence[i][0]);
@@ -237,7 +249,7 @@ void loop()
                 // Включили компрессор 
                 digitalWrite(PUMP, LOW);
             }
-            else 
+            else
             {
                 // Закрыли клапан
                 digitalWrite(VALVE, LOW);

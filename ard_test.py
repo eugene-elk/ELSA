@@ -1,7 +1,7 @@
 import serial, time
 
 # Устанавливаем соединение с ардуино, скорость соединения 115200 бод
-arduino = serial.Serial('/dev/ttyUSB0', 115200, timeout=.1)
+arduino = serial.Serial('/dev/ttyUSB1', 115200, timeout=.1)
 
 # Задержка для установки соединения
 time.sleep(1) 

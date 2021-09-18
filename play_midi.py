@@ -1,11 +1,11 @@
 from midi_parser import parse_midi
 import serial, time
 
-melody = parse_midi('midi/pirate2.mid')
+melody = parse_midi('midi/scale3.mid')
 print(melody)
 
 # Устанавливаем соединение с ардуино, скорость соединения 115200 бод
-arduino = serial.Serial('/dev/ttyUSB0', 115200, timeout=.1)
+arduino = serial.Serial('/dev/ttyUSB1', 115200, timeout=.1)
 
 # Задержка для установки соединения
 time.sleep(1) 

@@ -14,7 +14,7 @@ def parse_midi(path_to_midi):
         # print(msg)
         if msg.type == 'note_on' or msg.type == 'note_off':
             # print(msg)
-            melody.append([(msg.note - 60), msg.velocity, int(msg.time*1000)])
+            melody.append([(msg.note - 60) % 12, msg.velocity, int(msg.time*1000)])
 
     prefix = [[0, 0, len(melody)]]
     prefix.extend(melody)
