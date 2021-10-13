@@ -1,5 +1,5 @@
 {
-    "port": "/dev/ttyUSB1",
+    "port": "/dev/ttyUSB0",
     "board": "arduino:avr:mega",
     "sketch": "arduino/new_protocol/new_protocol.ino",
     "configuration": "cpu=atmega2560"
