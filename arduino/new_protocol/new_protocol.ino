@@ -1,5 +1,5 @@
 #include <Adafruit_PWMServoDriver.h>
-#include "settings.h"
+#include "/home/tlab/Documents/ELSA/arduino/settings.h"
 
 // Создаем сервоконтроллер
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();

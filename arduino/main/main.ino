@@ -1,6 +1,6 @@
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
-#include "settings.h"
+#include "/home/tlab/Documents/ELSA/arduino/settings.h"
 
 // Создаем сервоконтроллер
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
@@ -14,7 +14,6 @@ byte buffer[50];
 // Флаги
 bool read_seq = false;
 bool read_meta = false;
-
 
 uint16_t sequence[1024][3];
 uint16_t seq_length = 0; 

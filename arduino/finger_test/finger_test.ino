@@ -1,6 +1,6 @@
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
-#include "settings.h"
+#include "/home/tlab/Documents/ELSA/arduino/settings.h"
 
 // TODO: сделать define для открытия и закрытия клапана и компрессора
 // TODO: новая программа для тестирования - сразу вписывать ноту
