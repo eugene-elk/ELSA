@@ -6,6 +6,8 @@ arduino = serial.Serial('/dev/ttyUSB0', 115200, timeout=.1)
 # Задержка для установки соединения
 time.sleep(1) 
 
+# TODO сделать единый settings.json
+
 positions = [
 # open / closed
     [0, 0],			#0
@@ -24,17 +26,42 @@ positions = [
 while True:
 	a = input()
 
+	# Последовательность для отправки (содержит информацию об одном пальце и его положении)
 	seq = []
+
+	# Флаг корректности введённого значения
+	correct = True
+
 	# Создаем массив из введённых значений
 	arr = [x for x in a.split()]
-	# print(arr)
+	print(arr)
 
 	# Берём значения из массива для открытого или закрытого положения выбранного пальца
-	seq.append(arr[0])
-	if (arr[1] == "open"):
-		seq.append(positions[int(arr[0])][0])
-	if (arr[1] == "close"):
-		seq.append(positions[int(arr[0])][1])
+	seq.append(int(arr[0]))
+	if (seq[0] == 1): # Палец номер 1 (большой) имеет также среднее положение, рассматриваем его отдельно
+		if arr[1] == "open":
+			seq.append(positions[int(arr[0])][0])
+		elif arr[1] == "mid":
+			seq.append(positions[int(arr[0])][1])
+		elif arr[1] == "close":
+			seq.append(positions[int(arr[0])][2])
+		else:
+			correct = False
+
+	elif (seq[0] <= 10) and (seq[0] >= 0):
+		if arr[1] == "open":
+			seq.append(positions[int(arr[0])][0])
+		elif arr[1] == "close":
+			seq.append(positions[int(arr[0])][1])
+		else:
+			correct = False
 	
-	# print(seq) 
-	arduino.write(seq)
+	else:
+		correct = False
+
+	# Проверка корректности ввода - на случай опечаток
+	if correct:
+		arduino.write(seq)
+		print("sent: ", seq)
+	else:
+		print("incorrect input")
