@@ -12,6 +12,7 @@ ELSA, The Robot Playing Flute
 Arduino: fingers_test.ino  
 
 Python: ard_test.py - старая программа для тестирования
+        
         finger_test.py - имеет сохранённые настройки, нет необходимости зававать конкретное значение пальца
 
 ### Проигрывание midi-файла ###
