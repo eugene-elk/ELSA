@@ -60,6 +60,17 @@ void loop() {
 		unsigned s = Serial.read();
 		unsigned angle = Serial.read();
 
+        // Обработка angle в случае использования сохранённых значений из settings.
+        if (angle == 200) { // использовать угол для открытия из settings
+            angle = positions[s][0];
+        } 
+        elif (angle == 201) { // использовать угол для закрытия из settings
+            angle = positions[s][1];
+        }
+        elif (angle == 202) { // для пальца номер 1, у которого имеется три позиции
+            angle = positions[s][2];
+        }
+
         // Выставляем каждую серву в нужное значение
         pwm.setPWM(servos[s], 0, get_pulse(angle));
 	}

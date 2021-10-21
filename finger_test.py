@@ -8,21 +8,6 @@ time.sleep(1)
 
 # TODO сделать единый settings.json
 
-positions = [
-# open / closed
-    [0, 0],			#0
-    [5, 20, 40],	#1
-    [25, 50],  		#2
-    [60, 20],   	#3
-    [20, 55],   	#4
-    [70, 20],   	#5
-    [60, 20],   	#6
-    [40, 65],   	#7
-    [70, 20],   	#8
-    [30, 10],   	#9
-    [22, 5]  		#10
-]
-
 while True:
 	a = input()
 
@@ -40,19 +25,19 @@ while True:
 	seq.append(int(arr[0]))
 	if (seq[0] == 1): # Палец номер 1 (большой) имеет также среднее положение, рассматриваем его отдельно
 		if arr[1] == "open":
-			seq.append(positions[int(arr[0])][0])
+			seq.append(200)
 		elif arr[1] == "mid":
-			seq.append(positions[int(arr[0])][1])
+			seq.append(201)
 		elif arr[1] == "close":
-			seq.append(positions[int(arr[0])][2])
+			seq.append(202)
 		else:
 			correct = False
 
 	elif (seq[0] <= 10) and (seq[0] >= 0):
 		if arr[1] == "open":
-			seq.append(positions[int(arr[0])][0])
+			seq.append(200)
 		elif arr[1] == "close":
-			seq.append(positions[int(arr[0])][1])
+			seq.append(201)
 		else:
 			correct = False
 	
