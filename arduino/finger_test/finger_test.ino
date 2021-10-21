@@ -64,10 +64,10 @@ void loop() {
         if (angle == 200) { // использовать угол для открытия из settings
             angle = positions[s][0];
         } 
-        elif (angle == 201) { // использовать угол для закрытия из settings
+        else if (angle == 201) { // использовать угол для закрытия из settings
             angle = positions[s][1];
         }
-        elif (angle == 202) { // для пальца номер 1, у которого имеется три позиции
+        else if (angle == 202) { // для пальца номер 1, у которого имеется три позиции
             angle = positions[s][2];
         }
 

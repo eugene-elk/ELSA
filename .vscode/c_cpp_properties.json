@@ -38,8 +38,8 @@
             "includePath": [
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/arduino/avr/cores/arduino",
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/arduino/avr/variants/mega",
-                "/home/tlab/Arduino/libraries/Adafruit_PWM_Servo_Driver_Library",
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/arduino/avr/libraries/Wire/src",
+                "/home/tlab/Arduino/libraries/Adafruit_PWM_Servo_Driver_Library",
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/tools/avr/lib/gcc/avr/4.9.2/include-fixed",
                 "/home/tlab/Downloads/arduino-1.8.3/hardware/tools/avr/avr/include"

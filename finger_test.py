@@ -8,6 +8,8 @@ time.sleep(1)
 
 # TODO сделать единый settings.json
 
+
+
 while True:
 	a = input()
 
@@ -19,28 +21,34 @@ while True:
 
 	# Создаем массив из введённых значений
 	arr = [x for x in a.split()]
+
+
 	print(arr)
 
 	# Берём значения из массива для открытого или закрытого положения выбранного пальца
 	seq.append(int(arr[0]))
 	if (seq[0] == 1): # Палец номер 1 (большой) имеет также среднее положение, рассматриваем его отдельно
-		if arr[1] == "open":
+		if (arr[1] == "open") or (arr[1] == "o"):
 			seq.append(200)
-		elif arr[1] == "mid":
+		elif (arr[1] == "mid") or (arr[1] == "m"):
 			seq.append(201)
-		elif arr[1] == "close":
+		elif (arr[1] == "close") or (arr[1] == "c"):
 			seq.append(202)
+		elif (int(arr[1]) >= 3) and (int(arr[1]) <= 100): # Проверка на адекватность числового значения
+			seq.append(int(arr[1]))
 		else:
 			correct = False
 
 	elif (seq[0] <= 10) and (seq[0] >= 0):
-		if arr[1] == "open":
+		if (arr[1] == "open") or (arr[1] == "o"):
 			seq.append(200)
-		elif arr[1] == "close":
+		elif (arr[1] == "close") or (arr[1] == "c"):
 			seq.append(201)
+		elif (int(arr[1]) >= 3) and (int(arr[1]) <= 100): # Проверка на адекватность числового значения
+			seq.append(int(arr[1]))
 		else:
 			correct = False
-	
+
 	else:
 		correct = False
 
