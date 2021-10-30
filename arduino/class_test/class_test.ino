@@ -65,13 +65,21 @@ note notes[14] = {
     note("C#_2",finger_notes[13], sizeof(finger_notes[13]))  
 };
 
+short find_note(String find_name) {
+  for (short i = 0; i < 14; i++) {
+    if (notes[i].name == find_name) {
+      return i;
+    }
+  }
+  return 15;
+}
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  flex.show_info();
-  flex2.show_info();
-  notes[4].show_info();
-  notes[12].show_info();
+  short note_g = find_note("G");
+  Serial.println(note_g);
+  notes[find_note("G")].show_info();
 }
 
 void loop() 
